@@ -7,6 +7,10 @@ module.exports = {
     ],
     theme: {
         extend: {
+            colors: {
+                // Add custom colors if needed
+                brandBlue: '#2563EB',
+            },
             fontFamily: {
                 sans: ['var(--font-geist-sans)', 'sans-serif'],
                 mono: ['var(--font-geist-mono)', 'monospace'],
