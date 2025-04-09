@@ -1,48 +1,46 @@
-"use client";
-import { motion } from 'framer-motion';
+"use client"; // Ensure this runs on the client for Framer Motion
+import { motion } from "framer-motion";
 
-const heroVariants = {
-   hidden: { opacity: 0, y: 30 },
-   visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } }
-};
-
-const Hero = () => {
+export default function Hero() {
    return (
-      <motion.section
-      variants={heroVariants}
-      initial="hidden"
-      animate="visible"
-      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-50 to-purple-50 px-4"
+      <section
+      className="bg-[#0a192f] text-[#ccd6f6] min-h-screen flex flex-col items-center justify-center px-4"
+      id="hero"
       >
-      <motion.h1 
-         className="text-5xl md:text-7xl font-bold mb-4 text-gray-900"
-         initial={{ opacity: 0 }}
-         animate={{ opacity: 1, transition: { delay: 0.5 } }}
+      {/* Heading with fade-in animation */}
+      <motion.h1
+         className="text-4xl md:text-6xl font-bold text-center"
+         initial={{ opacity: 0, y: 20 }}
+         animate={{ opacity: 1, y: 0 }}
+         transition={{ duration: 0.8 }}
       >
-         Chao Yuan
+         Hello, I&apos;m <span className="text-[#64ffda]">Chao Yuan</span>.
       </motion.h1>
-      <motion.p 
-         className="text-xl md:text-2xl text-gray-600 mb-8 text-center max-w-2xl"
-         initial={{ opacity: 0 }}
-         animate={{ opacity: 1, transition: { delay: 0.7 } }}
+
+      {/* Subtitle / Bio with a slight delay */}
+      <motion.p
+         className="text-base md:text-xl text-[#8892b0] mt-4 max-w-2xl text-center leading-relaxed"
+         initial={{ opacity: 0, y: 20 }}
+         animate={{ opacity: 1, y: 0 }}
+         transition={{ delay: 0.2, duration: 0.8 }}
       >
-         IT graduate with a Master’s in Software Development (GPA 6.5/7) and
-         hands-on experience building APIs, mobile apps, and cloud-based
-         systems. Skilled in Python, PHP, JavaScript, AWS, and Agile. Currently
-         interning as a Junior Developer on a real-world project with an ex-
-         FAANG team.
-         <br />
+         I&apos;m an IT graduate with a Master&apos;s in Software Development 
+         <strong> (GPA 6.5/7) </strong> and hands-on experience building APIs, 
+         mobile apps, and cloud-based systems. Skilled in Python, PHP, JavaScript, 
+         AWS, and Agile. Currently interning as a Junior Developer on a real-world 
+         project with an ex-FAANG team.
       </motion.p>
+
+      {/* Call-to-Action Button */}
       <motion.a
          href="#projects"
-         className="px-6 py-3 border border-transparent text-lg font-medium rounded-lg shadow-sm bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300"
+         className="mt-8 inline-block px-6 py-3 border border-[#64ffda] text-[#64ffda] hover:bg-[#64ffda11] transition duration-300 rounded font-medium"
          initial={{ opacity: 0, scale: 0.95 }}
-         animate={{ opacity: 1, scale: 1, transition: { delay: 0.9, duration: 0.5 } }}
+         animate={{ opacity: 1, scale: 1 }}
+         transition={{ delay: 0.4, duration: 0.8 }}
       >
          View My Work
       </motion.a>
-      </motion.section>
+      </section>
    );
-};
-
-export default Hero;
+}
